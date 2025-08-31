@@ -88,7 +88,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
 
 data = pd.read_csv("50_Startups.csv")
-
+print(data.head())
 X = data.iloc[:, :-2].values.astype(float)  
 y = data.iloc[:, -1].values.astype(float).reshape(-1, 1)
 
@@ -114,9 +114,14 @@ print(f"Predicted value: {pre}")
 ```
 
 ## Output:
+
+<img width="990" height="125" alt="image" src="https://github.com/user-attachments/assets/8136084c-b37a-4d27-b001-5391311d11a9" />
+
 <img width="997" height="327" alt="image" src="https://github.com/user-attachments/assets/8417534a-5db2-4277-beb4-54c6956861e4" />
 
 <img width="1004" height="163" alt="image" src="https://github.com/user-attachments/assets/b01dd161-99a8-4559-a731-f235216fbc46" />
+
+<img width="1016" height="38" alt="image" src="https://github.com/user-attachments/assets/3fb7d1cb-2209-4457-8a86-3d29414d58b6" />
 
 
 ## Result:
