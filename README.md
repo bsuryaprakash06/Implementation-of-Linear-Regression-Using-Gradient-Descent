@@ -6,61 +6,32 @@ To write a program to predict the profit of a city using the linear regression m
 ## Equipments Required:
 1. Hardware – PCs
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
-```
-Name: B Surya Prakash
-Register No: 212224230281
-```
+
 ## Algorithm
 
-Step 1: Import the required libraries:
+# Startup Profit Prediction Algorithm (4-Step)
 
-numpy for numerical operations
+## Step 1: Data Preparation
+- Import necessary libraries: `numpy`, `pandas`, `StandardScaler`, `LinearRegression`.
+- Load the dataset `50_Startups.csv`.
+- Extract features (`R&D Spend`, `Administration`, `Marketing Spend`) and target (`Profit`).
 
-pandas for data handling
+## Step 2: Feature Scaling
+- Create two `StandardScaler` instances: one for features, one for the target.
+- Fit and transform the features and target using their respective scalers.
 
-StandardScaler for feature scaling
+## Step 3: Model Training
+- Initialize a `LinearRegression` model.
+- Train the model using the scaled features and target.
 
-LinearRegression for building the model
+## Step 4: Prediction
+- Scale new input data using the feature scaler.
+- Predict the scaled target using the trained model.
+- Inverse transform the prediction to original scale.
+- Print the predicted profit value.
 
-Step 2: Load the dataset 50_Startups.csv using pandas.read_csv().
-
-Step 3: Extract the independent variables (features):
-
-Select the first three numeric columns (R&D Spend, Administration, Marketing Spend).
-
-Step 4: Extract the dependent variable (target):
-
-Select the last column (Profit) and reshape it as a column vector.
-
-Step 5: Create two StandardScaler objects:
-
-One for scaling the features (scaler_X)
-
-One for scaling the target (scaler_y)
-
-Step 6: Fit and transform the features with scaler_X → X1_Scaled.
-
-Step 7: Fit and transform the target with scaler_y → Y1_Scaled.
-
-Step 8: Print your Name and Register Number for identification.
-
-Step 9: Display the scaled features and scaled target values.
-
-Step 10: Initialize a LinearRegression model.
-
-Step 11: Train the model on the scaled dataset using .fit(X1_Scaled, Y1_Scaled).
-
-Step 12: Define new input data as [165349.2, 136897.8, 471784.1].
-
-Step 13: Scale the new input using the same feature scaler (scaler_X.transform).
-
-Step 14: Predict the scaled output using model.predict().
-
-Step 15: Inverse transform the prediction to the original target scale using scaler_y.inverse_transform().
-
-Step 16: Print the final predicted value of Profit.
 ## Program:
-```
+```python
 #Program to implement the linear regression using gradient descent.
 #Developed by: B Surya Prakash
 #RegisterNumber: 212224230281
@@ -81,7 +52,7 @@ def linear_regression(X1, y, learning_rate=0.01, num_iters=1000):
     return theta
 
 ```
-```
+```python
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
